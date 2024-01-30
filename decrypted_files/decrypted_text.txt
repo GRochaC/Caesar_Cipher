@@ -1,0 +1,5 @@
+Esse arquivo texto serve de teste para verificar o funcionamento do algoritmo de codifação.
+// This text file serves as a test to verify the functioning of the encoding algorithm.
+
+A seguinte frase deve ser encriptografada: "the brown fox jumps over the lazy dog".
+// The following sentence should be encrypted: "the brown fox jumps over the lazy dog".
