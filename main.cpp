@@ -22,34 +22,29 @@ int main() {
             int op = stoi(op_);
             if(op < 0 or op > 2) throw 505;
             
-            ifstream file; string path;
+            ifstream file; string path; bool fail;
+            do {
+                std::cout << "File path: ";
+                getline(cin, path);
+                file.open(path);
+                fail = file.fail();
+
+                if(fail) std::cout << "Error: No such file or path" << '\n';
+
+            } while(fail);
+            file.close();
+
             switch(op) {
                 // Encryption
                 case 1:
-                    do {
-                        std::cout << "File path: ";
-                        getline(cin, path);
-                        file.open(path);
-                    } while(file.fail());
-                    file.close();
-
                     Cipher::encrypt_file(path);
                     std::cout << "Encryption completed successfully." << '\n';
-
                     break;
 
                 // Decryption
                 case 2:
-                    do {
-                        std::cout << "File path: ";
-                        getline(cin, path);
-                        file.open(path);
-                    } while(file.fail());
-                    file.close();
-
                     Cipher::decrypt_file(path);
                     std::cout << "Decryption completed successfully." << '\n';
-
                     break;
             }
 
